@@ -1,0 +1,301 @@
+*{
+	padding:0px;
+	margin:0px;
+	text-decoration: none;
+	list-style: none;
+}
+.wholepage{
+	width:100%;
+	position: absolute;
+}
+a{
+	text-decoration: none;
+}
+.logo{
+	width:100%;
+	height:70px;
+	position:absolute;
+	top:0px;
+	z-index: 200;
+	background:linear-gradient(rgba(170,170,170,0.6),rgba(231,231,231,0.1));
+}
+.logo_left{
+	height:60px;
+	float:left;
+	margin-left:10%;
+}
+.art-font{
+	font-family: "kunstler script";
+	font-size:280%;
+	color:#134CEC;
+	font-weight:bold;
+	position: relative;
+	top:15%;
+}
+.art-font-t{
+	font-family: "方正舒体";
+	font-size:200%;
+	color:#134CEC;
+	position: relative;
+	top:15%;
+}
+.logo_menu{
+	height:40px;
+	width:25%;
+	float:left;
+	font-size:100%;
+	position: absolute;
+	left:35%;
+	top:15px;
+}
+.logo_menu ul{
+	list-style: none;
+}
+.logo_menu ul li{
+	float:left;
+	padding:8px 4%;
+	margin-left:6%;
+}
+.logo_menu ul a{
+	color:#134CEC;
+}
+.logo_menu ul li:hover{
+	border:1px solid white;
+	border-radius: 5px;
+	background: rgba(255,255,255,0.4);
+}
+.logo_right{
+	width:18%;
+	height:60px;
+	float:left;
+	position: absolute;
+	right:8%;
+}
+.logo_right input{
+	width:46%;
+	height:35px;
+	font-size:17px;
+	color:#134CEC;
+	cursor:pointer;
+	margin-top:13px;
+	margin-right:1%;
+	font-weight:lighter;
+	background:rgba(255,255,255,0.0);
+	border:1px solid #134CEC;
+	border-radius:6px;
+}
+#dlzc:hover{
+	background:rgba(255,255,255,0.4);
+	color:#2d9de4;
+	
+}
+.logo_right a:hover{
+	text-decoration: none;
+}
+@media only screen and (max-width: 800px){
+	.logo_right {
+		display: none;
+	}
+	.logo_menu{
+		width:40%;
+		left:55%;
+	}
+	.logo_left{
+		font-size:80%;
+	}
+	.art1{
+		margin-left:none;
+	}
+	.art2{
+		display:block;
+	}
+}
+.content{
+	width:100%;
+	position: relative;
+}
+#first{
+	width:1350px;
+	margin:50px auto;
+}
+@keyframes fadeInLeft{
+		0%{
+			opacity:0;
+			-moz-transform:translate3d(100%,0,0);
+			transform:translate3d(100%,0,0);
+		}
+		100%{
+			opacity:1;
+			-moz-transform:none;
+			transform:none;
+		}
+	}
+.fadeInLeft{
+		-moz-animation-name:fadeInLeft;
+		animation-name:fadeInLeft;
+		-moz-animation-duration:2s;
+		animation-duration:2s;
+}
+.pro_name{
+	width:500px;
+	height:40px;
+	margin:50px auto 0px auto;
+	display: block;
+	font-size:35px;
+	text-align: center;
+}
+.pro_con{
+	width:800px;
+	margin:0px auto;
+	display: block;
+	font-size:20px;
+}
+.pro_con p{
+	margin-top:20px;
+	line-height: 30px;
+	letter-spacing:5px;
+	word-break:break-all;
+}
+#second{
+	width:100%;
+	height:470px;
+	margin:20px auto;
+	background:#07a2fb;
+}
+@keyframes fadeInRight{
+		0%{
+			opacity:0;
+			-moz-transform:translate3d(-100%,0,0);
+			transform:translate3d(-100%,0,0);
+		}
+		100%{
+			opacity:1;
+			-moz-transform:none;
+			transform:none;
+		}
+	}
+.fadeInRgith{
+		-moz-animation-name:fadeInRight;
+		animation-name:fadeInRight;
+		-moz-animation-duration:2s;
+		animation-duration:2s;
+}
+.group{
+	width:90%;
+	margin:auto;
+	padding-top:60px;
+}
+#group_left{
+	width:35%;
+	float:left;
+	margin-left:10%;
+}
+@keyframes group_left{
+		0%{
+			opacity:0;
+			-moz-transform:translate3d(100%,0,0);
+			transform:translate3d(100%,0,0);
+		}
+		100%{
+			opacity:1;
+			-moz-transform:none;
+			transform:none;
+		}
+	}
+.group_left{
+		-moz-animation-name:group_left;
+		animation-name:group_left;
+		-moz-animation-duration:2s;
+		animation-duration:2s;
+}
+.picone{
+	float:left;
+	position: relative;
+	top:160px;
+	left:40px;
+}
+.pictwo{
+	float:left;
+	position: relative;
+	top:0px;
+	left:20px;
+}
+.picthree{
+	float:left;
+	position: relative;
+	top:160px;
+	left:0px;
+}
+/* .picfour{
+	float:left;
+	position: relative;
+	top:105px;
+	left:60px;
+}
+.picfive{
+	float:left;
+	position: relative;
+	top:105px;
+	left:80px;
+} */
+.group_right{
+	width:40%;
+	height:100%;
+	float:left;
+	margin-left:5%;
+}
+#third{
+	width:1350px;
+	margin:30px auto 0px auto;
+}
+@keyframes third{
+		0%{
+			opacity:0;
+			-moz-transform:translate3d(100%,0,0);
+			transform:translate3d(100%,0,0);
+		}
+		100%{
+			opacity:1;
+			-moz-transform:none;
+			transform:none;
+		}
+	}
+.third{
+		-moz-animation-name:group_left;
+		animation-name:group_left;
+		-moz-animation-duration:2s;
+		animation-duration:2s;
+}
+.font-con{
+	width:900px;
+	margin:auto;
+}
+.font-con p{
+	font-size:25px;
+	line-height: 40px;
+	font-weight: lighter;
+}
+.logo_bottom{
+	width:100%;
+	height:40px;
+	margin:30px auto 0px auto;
+	background:black;
+}
+@media only screen and (max-width: 800px){
+	.logo_right {
+		display: none;
+	}
+	.logo_menu{
+		width:40%;
+		left:55%;
+	}
+	.logo_left{
+		font-size:80%;
+	}
+	.art1{
+		margin-left:none;
+	}
+	.art2{
+		display:block;
+	}
+}
