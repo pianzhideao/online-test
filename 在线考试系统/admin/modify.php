@@ -23,11 +23,11 @@ session_start();
 		if(isset($_POST['submit3'])){
 			mysqli_select_db($conn,"topic");
 			$sql = "DELETE from topic WHERE id='".$_POST['id']."'";
-			$result = mysqli_query($conn,$sql) or die("連接失敗");
+			$result = mysqli_query($conn,$sql) or die("连接失败");
 			if(mysqli_affected_rows($conn)){
 				echo "<script>alert('刪除成功');history.go(-1);</script>";
 			}else{
-				echo "<script>alert('刪除失敗');history.go(-1);</script>";
+				echo "<script>alert('刪除失败');history.go(-1);</script>";
 			}
 		}	
 	}else

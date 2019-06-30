@@ -40,7 +40,7 @@
 				include('2.php');
 				$_SESSION['username'] = $user;
 				mysqli_close($conn);
-				echo "<script>alert('成功登录'); window.location.href='../startteam.php';</script>"; 
+				echo "<script>window.location.href='../startteam.php';</script>"; 
  					} else{ 
  						mysqli_close($conn);
  					echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>";

@@ -114,7 +114,7 @@
             		<p>为梦想助力</p>
             		<a href="login.php"><input type="button" name="login" value="登录"></a>
 					<a href="register.php"><input type="button" name="register" value="注册"></a>
-					<a href="admin/index.php"><input type="button" name="login" value="管理员登录"></a>
+					<a href="admin/adlogin/login.php"><input type="button" name="login" value="管理员登录"></a>
             	</div>
             	<div class="bottom">
             		<p>Copyright © 2017 吉林北华经纬工作室 京ICP备14020947</p>

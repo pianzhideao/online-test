@@ -41,7 +41,8 @@
                 </div>
                 <div class="jj_left">
                     <ul>
-                        <li>昵称：<?php echo $html['username']?></li>
+                        <li>学号：<?php echo $html['username']?></li>
+                        <li>真实姓名：<?php echo $html['zsname']?></li>
                         <li>性别：<?php echo $html['sex']?></li>
                         <li>邮箱：<?php echo $html['email']?></li>
                     </ul>

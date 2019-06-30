@@ -62,7 +62,7 @@
 					while($array2 = mysqli_fetch_array($query)){
 					if($array2[kt_pd]=='yes'){
 						$x += 1;
-					}elseif ($array2[kt_pd]=='no') {
+					}else if ($array2[kt_pd]=='no') {
 						$x += 0;
 					}else{
 						$x += ($array2[kt_pd]/20);
@@ -77,14 +77,7 @@
 				<span>
 				<?php
 					session_start();
-					//var_dump($_SESSION['dxt']);
 					$dxt=$_SESSION['dxt'];
-					//unset($_SESSION['dxt']);
-					//echo count($dxt);
-
-					// $sql100="select * from tom";
-					// $query100=mysqli_query($my_sqli,$sql100);
-					// $array100=mysqli_fetch_array($query100);
 
 					$fen0=0;
 					$i=0;
@@ -104,14 +97,6 @@
 						}elseif ($array1[kt_lx]=="多选题") {
 							$fen0 += 10;
 						}
-					// 	else{
-					// 		$query2 = mysqli_query($my_sqli,"select * from transfer and kt_cs=$array100[sz]");
-					// 		$array2 = mysqli_fetch_array($query2);
-					// 			if($array2[kt_pd]!='yes' && $array2[kt_pd]!='no' &&$array2[kt_pd]!=""){
-					// 			$fen1=round($array2[kt_pd],1);
-						
-					// }
-					// 	}
 						
 					$i++;
 					}
@@ -130,30 +115,11 @@
 				?>
 				分</span>
 			</div>
-			<!-- <div class="circle3">
-				<span class="right">排名:</span>
-				<span class="percent">NO.1</span>
-			</div> -->
 			<input type="password" placeholder="请输入您的查询码" name="search">
 			<input type="button" value="查询" id="search" name="searchbutton">
             <a href="analysis.php" style="text-decoration:none;"><input type="button" value="查看解析" id="analysis" name="analysis"></a>
-            <input type="button" value="退出此页" id="move" name="move">
+            <a href="startteam.php" style="text-decoration:none;"><input type="button" value="退出此页" id="move" name="move"></a>
 		</div>
 	</div>
 </body>
 </html>
-<?php
-$sql88 = "SELECT * from users where username = '{$username}'";
-$aaa=mysqli_query($conn,$sql88);
-$aad = mysqli_fetch_array($aaa);
-$zsname=$aad['zsname'];
-$sql888 = "SELECT * from tom where id = '1'";
-$aaaa=mysqli_query($conn,$sql888);
-$aadd = mysqli_fetch_array($aaaa);
-$sz=$aadd['sz'];
-$sql99="insert into report (reallyname,report,cs)values('$zsname','$zf','$sz')";
-$var=mysqli_query($conn,$sql99);
-  var_dump($sql99);
-
-
-?>

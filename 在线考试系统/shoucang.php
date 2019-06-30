@@ -18,7 +18,7 @@
         
         
     }else{
-        echo "<script>alert('用户不存在');history.go(-1);</script>";
+        echo "<script>alert('请登录');history.go(-1);</script>";
     }
 
 ?>
@@ -27,8 +27,8 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>错题本</title>
-    <link rel="stylesheet" type="text/css" href="css/mistake.css">
+    <title>收藏夹</title>
+    <link rel="stylesheet" type="text/css" href="css/shoucang.css">
     <script src="js/personal_information.js" ></script>
 </head>
 <body>
@@ -41,7 +41,8 @@
                 </div>
                 <div class="jj_left">
                     <ul>
-                        <li>昵称：<?php echo $html['username']?></li>
+                        <li>学号：<?php echo $html['username']?></li>
+                        <li>真实姓名：<?php echo $html['zsname']?></li>
                         <li>性别：<?php echo $html['sex']?></li>
                         <li>邮箱：<?php echo $html['email']?></li>
                     </ul>
@@ -65,29 +66,30 @@
                     <img src="<?php echo $html['face']?>" style="width:120px;height:120px;border:1px solid white;border-radius:50%;">
                 </div> 
                 <ul id="menu_right">
-                    <a href="shoucang.php"><li>收藏夹</li></a>
-                    <a href=""><li style="background: rgba(255,255,255,0.6);">错题本</li></a>
+                    <a href=""><li style="background: rgba(255,255,255,0.6);">收藏夹</li></a>
+                    <a href="mistake.php"><li>错题本</li></a>
                     <a href="includes/logout.php"><li>退出登录</li></a>
                 </ul>
             </div>
         </div>
         <div class="content">
-            <div id="mistake" class="hide a">
+      
+            <div id="my_sc" class="hide a">
                 <ul>
                     <?php
                     include ("includes/page.class.php");
                     $cookie=$html['username'];
-                    $query100 = mysqli_query($conn,"select * from transfer where kt_user='$cookie' and kt_pd='no'");
+                    $query100 = mysqli_query($conn,"select * from shoucang where kt_user='$cookie'");
                     
                     $total = mysqli_num_rows($query100);
-                    //echo $cookie;
+                    //echo $total;
                     //echo "+++++";
                      $i=1;
                     //创建分页对象    
                     $num=5;
                     $page=new Page($total,$num);
 
-                    $query = mysqli_query($conn,"select * from transfer where kt_user='$cookie' and kt_pd='no' order by id asc {$page->limit}");
+                    $query = mysqli_query($conn,"select * from shoucang where kt_user='$cookie' order by id asc {$page->limit}");
                     //$array = mysqli_fetch_array($query);
                     //echo "select * from transfer where kt_pd='no' {$page->limit}";
                      
@@ -103,49 +105,48 @@
                 ?>
                 
                     <li>
-                        <span  style="display:block;width:100%;height:40px;position: relative;top:0px;background:rgb(120,170,240);"><?php echo $i.".".$array1["ks_nr"]; ?></span>
-                    <div style="background:white;padding:10px 0px;opacity: 0.8;">
-                    <?php
-                        $array2=explode("*",$array1["kq_da"]);
-                        for($a=0;$a<count($array2);$a++){
-                            if($array2[$a]!=""){
-                                if(trim($array2[$a])==$array1[zq_da]){
+                        <span style="display:block;width:100%;height:40px;position: relative;top:0px;background:rgb(120,170,240);"><?php echo $i.".".$array1["ks_nr"]; ?></span>
+                    <div style="background:white;padding:10px 0px;opacity:0.8;">
+                        <?php
+                            $array2=explode("*",$array1["kq_da"]);
+                            for($a=0;$a<count($array2);$a++){
+                                if($array2[$a]!=""){
+                                    if(trim($array2[$a])==$array1[zq_da]){
+                                        
 
-                    ?>
-                   
-                        <span style="display:block;padding-left:20px;background:rgba(120,170,240,0.6);border-radius:5px;"><?php echo $array2[$a]; echo "(正确答案)";?></span>
+                        ?>
                         
+                            <span style="display:block;padding-left:20px;background:rgba(120,170,240,0.6);border-radius:5px;z-index:100;"><?php echo $array2[$a]; echo "(正确答案)";?></span>
+                            
+                        <?php
+                                    }else{
+                        ?>
+                            <span style="margin-left:20px;"><?php echo $array2[$a]; ?></span><br/>
+                        <?php       
+                                }
+                                }
+                            }
+                        ?>
+                           </div>
+                            <!-- <span  style="margin-left:20px">考生答案：</span><span ><?php echo $array["ks_da"]; ?></span><br/> -->
+                            <span  style="display:block;width:100%;background:rgba(120,170,240,0.5);padding:5px 0px;padding:10px 0px"><p style="margin-left:20px">答案解析：<?php echo $array1["kt_jx"]; ?></span>
+                        </li>
+                    
                     <?php
-                                }else{
-                    ?>
-                        <span style="margin-left:20px;"><?php echo $array2[$a]; ?></span><br/>
-                    <?php       
-                            }
-                            }
+                        }
+                        $i++;
+                        $x++;
                         }
                     ?>
-                     </div>
-                    <div style="width:100%;background:rgba(120,170,240,0.5);padding:10px 0px">
-                        <span  style="margin-left:20px">考生答案：</span><span><?php echo $array["ks_da"]; ?></span><br/>
-                        <span  style="margin-left:20px;">答案解析：<?php echo $array1["kt_jx"]; ?></span>
-                    </div>
-                    </li>
-                
-                <?php
-                    }
-                    $i++;
-                    $x++;
-                    }
-                ?>
                 </ul>
                 <div class="fenye">
-                <?php
-                echo '<form action="mistake.php?action=del&page='.$page->page.'">';
-                echo '<table border="0" width="900">';
-                echo '<tr><td colspan="9" align="left" >'.$page->fpage().'</td></tr>';
-                echo '</table>';
-                echo '</form>';
-                ?>
+                    <?php
+                    echo '<form action="shoucang.php?action=del&page='.$page->page.'">';
+                    echo '<table border="0" width="900">';
+                    echo '<tr><td colspan="9" align="left" >'.$page->fpage().'</td></tr>';
+                    echo '</table>';
+                    echo '</form>';
+                    ?>
                 </div>
             </div>
         </div>

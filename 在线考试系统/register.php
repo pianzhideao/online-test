@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 		function checkinput(){
 
-				if(myform.id.value==""){
+				if(myform.name.value==""){
 					alert("学号不能为空");
 					// myform(表单名).username(表单里的东西).focus()（接受焦点） 
 					myform.name.focus();

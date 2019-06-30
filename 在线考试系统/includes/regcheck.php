@@ -23,7 +23,7 @@ session_start();
 		// 	echo "<script>alert('确认信息完整性');history.go(-1);</script>";
 			
 		// }
-		if(strlen($_POST['name'])>10){
+		if(strlen($_POST['name'])>16){
 			echo "<script>alert('学号不符合规定');history.go(-1);</script>";
 			 	exit();
 		}
@@ -69,7 +69,7 @@ session_start();
 					
 					 if($res_insert){
 					 	mysqli_close($conn);
-					 		echo "<script>alert('注册成功');location.href='../index.php';</script>";
+					 		echo "<script>location.href='../login.php';</script>";
 					 }
 					 else{
 					 	mysqli_close($conn);

@@ -215,14 +215,11 @@ DateSelector.prototype.InitSelector = function (year, month, day) {
 			</div>
 
            
-			<input type="text" name="user" placeholder="用户名" class="change_one" value="<?php echo $html['username']?>">
+			<input type="text" name="user" placeholder="学号" class="change_one" value="<?php echo $html['username']?>">
 
 			<input type="text" width="100px" name="truename" placeholder="姓名" class="change_one" value="<?php echo $html['zsname']?>">
 			<div class="sex">
 				<div class="font_sex"><?php echo $html['sex_html']?></div>
-
-				<!-- <input type="radio" name="one" checked="checked" id="men"><span style="position: relative;top:-25px;left:-25px;color:rgb(138,118,118);">男</span>
- 				<input type="radio" name="one" id="women"><span style="position: relative;top:-25px;left:-45px;color:rgb(138,118,118);">女</span> -->
 			</div>
            
 			<div class="portrait">
@@ -230,24 +227,13 @@ DateSelector.prototype.InitSelector = function (year, month, day) {
 				<span style="display: block;float:left;margin-top:10%;color:rgb(138,118,118);margin-left:10px">头像：　　</span>
 				<input type="hidden"  name="face" id="imgip" value="face/2.jpg">
                     <img style="cursor:pointer;" src="face/2.jpg"  id="faceimg" action="face.php" name="face" class="face">
-                  <!--   <input type="hidden" name="face" id="imgip" value="../dlzc/register/face/2.jpg">
-                <img style="cursor:pointer;"  src="../dlzc/register/face/2.jpg"  id="faceimg"  class="face" name="face" action="face.php">  -->
  
 			</div>
             
 			<div class="timer">
 				<div class="birth"><p>出生日期：</p></div>
 				<div class="select_time">
-					<!-- <select onchange="setDays()">
-					</select>
-					<span>年</span>
-					<select onchange="setDays()">
-					</select>
-					<span>月</span>
-					<select>
-					</select>
-					<span>日</span>
- -->
+		
             	<select name="year" id="selYear" style="width:60px"></select>
 				<select name="month" id="selMonth" style="width:40px"></select>
 				<select name="day" id="selDay" style="width:45px"></select>
@@ -258,9 +244,6 @@ DateSelector.prototype.InitSelector = function (year, month, day) {
 
 					    // 新建一个DateSelector类的实例，将三个select对象传进去
 					    new DateSelector(selYear, selMonth, selDay, 1999, 1, 11);
-					    // 也可以试试下边的代码
-					    // var dt = new Date(2004, 1, 29);
-					    // new DateSelector(selYear, selMonth ,selDay, dt);
 				</script>
 				</div>
 			</div>

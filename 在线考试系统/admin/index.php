@@ -36,8 +36,8 @@
           <dt class="#">管理中心</dt>
               <dd><a href="member.php">考生信息管理</a></dd>
               <dd><a href="ktlb.php">考试类別管理</a></dd>
-              <dd><a href="add.php">考題信息添加</a></dd>
-              <dd><a href="ktxx.php">考題信息管理</a></dd>
+              <dd><a href="add.php">考题信息添加</a></dd>
+              <dd><a href="ktxx.php">考试信息管理</a></dd>
       </div>
   </div>
 </body>

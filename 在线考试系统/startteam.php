@@ -2,20 +2,14 @@
     header("Content-Type: text/html; charset=utf-8");
     session_start();
     error_reporting(E_ALL || ~E_NOTICE);
-    //引用数据库加载页面
     include("conn/conn.php");
-    // $conn = mysqli_connect("localhost","root","123456") or die("链接失败");
-    //     mysqli_select_db($conn,"online_test");
-    //     mysqli_query($conn,"set names utf8");
-
     if(isset($_SESSION['username'])){
        
         $sql = "SELECT * from users where username = '{$_SESSION['username']}'";
-        // echo $sql;
-        //var_dump($sql);
         $result = mysqli_query($conn,$sql) or die("false");
         
-        if($html = mysqli_fetch_array($result)){        
+        if($html = mysqli_fetch_array($result)){     
+
         }  
     }else{
         echo "<script>alert('请登录');history.go(-1);</script>";
@@ -25,20 +19,6 @@
       while ($row100 = mysqli_fetch_array($result100)) {
           $array[]=$row100;
       }
-       // var_dump($array);
-     // for ($i=0; $i < count($array); $i++) { 
-     //    for ($j=0; $j <count($array)-$i ; $j++) { 
-
-     //        if ($array[$j]['0']==$array[$j+1]['0']) {
-               
-     //        }
-     //        else{
-     //            $www[]=$array[$j]['0'];
-
-     //        }
-     //    }
-       
-     // }
  //去列操作将考试类型全部提取出来
     $www=array_column($array,'ks_lx');
     
@@ -47,12 +27,7 @@
    //重置索引
    $ww = array_values($www);
     // var_dump($www);
-    $_SESSION['gesu']=3;
-    // var_dump( $_SESSION['gesu']);
-    //禁区
-    // $ww[]=array($www['0'],$www['1'],$www['4']);
-   
-
+    $_SESSION['gesu']=5;
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,7 +49,7 @@
                 </div>
                 <div class="jj_left">
                     <ul>
-                        <li>昵称：<?php echo $html['username']?></li>
+                        <li>学号：<?php echo $html['username']?></li>
                         <li>真实姓名：<?php echo $html['zsname']?></li>
                         <li>性别：<?php echo $html['sex']?></li>
                         <li>邮箱：<?php echo $html['email']?></li>
